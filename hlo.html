@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mama</title>
+
+<style>
+body {
+  margin: 0;
+  background: radial-gradient(circle, #000000, #1a001a);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Title */
+#title {
+  font-size: 45px;
+  margin-top: 40vh;
+  color: #ff4da6;
+  text-shadow: 0 0 20px #ff4da6, 0 0 40px #ff1a75;
+  animation: fadeOut 3s forwards;
+  animation-delay: 5s;
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+/* Message (SLOW FIX) */
+#message {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  padding: 25px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #ffd6f6;
+  text-shadow: 0 0 10px #ff66cc;
+  animation: scrollUp 120s linear forwards; /* SLOW */
+  animation-delay: 10s; /* DELAY */
+}
+
+@keyframes scrollUp {
+  from { bottom: -100%; }
+  to { bottom: 100%; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; }
+}
+
+/* Button */
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4da6;
+  color: white;
+}
+</style>
+</head>
+
+<body onclick="startAll()">
+
+<div id="title">🎂 Happy Birthday Mama ❤️</div>
+
+<div id="message">
+
+Happy Birthday Paithiyam ❤️<br><br>
+
+Nee rompa naala ennai mama nu koopdu nu ketta..naa ippo varaikum 
+unnai appadi koopdala...but innaiku kuptra happy birthday mama...<br><br>
+
+life la neraya tough situations la…<br>
+Nee eppovume irundhirukka… 🥺<br><br>
+
+Neraya perukku theriyadha neraya vishayangal irukku enna pathi…<br>
+En friends kooda theriyadhu… but unaku therium… avlo sikiram na 
+yaru kitaum share panna matta… na unkita ellam solrana 💖<br><br>
+
+nee something special for me 💖<br><br>
+
+Neraya per unnai thappa purinchutu irukanka…  
+“Bad boy” nu nenachirupaanga…  
+Aana adhu unmai illa 💯<br><br>
+
+Nee unmaiyave oru good soul 💛<br>
+Unna mathiri caring person naan paakave illa ❤️<br><br>
+
+Ellarum konjam naal dhaan care pannuvaanga…  
+Apram maariruvanga…  
+Aana nee eppovume adhe maari dhaan irukka 🥹<br><br>
+
+Ippadi irukkaradhu romba kashtam…  
+Adhanala dhaan aththai romba lucky 💫<br><br>
+
+I’m so lucky to have you as my friend ❤️<br><br>
+
+Namma bonding romba special…  
+Ippo konja naala pesurathu illa… konjo nal illa romba naal pesala 😅<br><br>
+
+But namma bonding eppovume maradhu 💯<br><br>
+
+Nee eppovume happy ah irukanum 😊✨<br>
+Athai ah nalla paathuko..aththai kitaum solliru unna nalla pathukanunu 💖<br><br>
+
+Ivanga dhaan enakku kadaisiya irukkura athai ah irukanum 🥺...and
+ unna eppothum na marakka matta neeum marakatha❤️..<br><br>
+
+ennathan nee ennoda mama ah irunthalum nee than ennoda paithiyam ,mental,lusu ellame...<br><br>
+
+na oru visayam tha na unkita marachtta...udane kovama paktha atha than
+ pona time cl pannum pothu sollitanla...athu ennoda mistake than 
+but nane atha realize panni athula irunthu na veliya vanthutta..na 
+antha time unna rompa miss panna..antha time la yarume share panna illa...
+ini aptila panna matta atha paththi cl panni la
+ kekatha ippotha athula irunthu veliya vanthurukka..<br><br>
+
+na marachutenu kovapatatha..enaku unkita solla payama irunthuchu..
+ sollama irunthathuku  sorry.....<br><br> 
+
+unakum neraya tough situation irukum but ippo tha aththa irukanka unna pathupanga..
+apti avanga illana un frd and marumgal na iruken
+
+
+Happy Birthday Mama 🎂❤️<br>
+Many more happy returns of the day 💖
+
+</div>
+
+<button id="musicBtn">Tap Anywhere 🎵</button>
+
+<audio id="bgmusic" loop>
+  <source src="music.mpeg" type="audio/mpeg">
+</audio>
+
+<script>
+// Hearts
+for (let i = 0; i < 35; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+}
+
+// Start all (tap fix)
+function startAll() {
+  let music = document.getElementById("bgmusic");
+  music.volume = 0.2;
+  music.play();
+
+  document.body.onclick = null; // one time only
+}
+</script>
+
+</body>
+</html>
